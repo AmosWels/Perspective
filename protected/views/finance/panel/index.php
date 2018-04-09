@@ -37,32 +37,32 @@
             <div class="search-page-results">
                 <div id="draft">
                     <div class="row s12">
-                        <div class="col m4">
-                            <a style="font-size: 24px; font: small-caption; font-size: large; font-weight: 400; color: black;" href="<?php echo @Yii::app()->baseUrl; ?>/index.php?r=finance/reimbursement"
+                        <div class="col m3">
+                            <a style="font-size: 24px;  font-size: small; font-weight: 400; color: black;" href="<?php echo @Yii::app()->baseUrl; ?>/index.php?r=finance/reimbursement"
                                onmouseover="this.style.color = 'orange';"  onmouseout="this.style.color = 'black';">
-                            <div class="card">
-                                <div class="card-content" >
-                                    <span>Reimbursement</span><i class="material-icons right">shop</i><br><br>
+                                <div class="card">
+                                <div class="card-content z-depth-3" >
+                                    <span>Reimbursement</span><i class="material-icons right">shop</i><br>
                                 </div>
                             </div>
                             </a>
                         </div>
-                        <div class="col m4">
-                            <a style="font-size: 24px; font: small-caption; font-size: large; font-weight: 400; color: black;" href="#"
+                        <div class="col m3">
+                            <a style="font-size: 24px;  font-size: small; font-weight: 400; color: black;" href="#"
                                onmouseover="this.style.color = 'orange';"  onmouseout="this.style.color = 'black';">
-                            <div class="card">
-                                <div class="card-content" >
-                                    <span>Reports</span><i class="material-icons right">report</i><br><br>
+                            <div class="card medium-small">
+                                <div class="card-content z-depth-3" >
+                                    <span>Reports</span><i class="material-icons  right">report</i><br>
                                 </div>
                             </div>
                             </a>
                         </div>
-                        <div class="col m4">
-                            <a style="font-size: 24px; font: small-caption; font-size: large; font-weight: 400; color: black;" href="#"
+                        <div class="col m3">
+                            <a style="font-size: 24px;  font-size: small; font-weight: 400; color: black;" href="#"
                                onmouseover="this.style.color = 'orange';"  onmouseout="this.style.color = 'black';">
                             <div class="card">
-                                <div class="card-content" >
-                                    <span>Settings</span><i class="material-icons right">settings</i><br><br>
+                                <div class="card-content z-depth-3" >
+                                    <span>Settings</span><i class="material-icons right">settings</i><br>
                                 </div>
                             </div>
                             </a>
