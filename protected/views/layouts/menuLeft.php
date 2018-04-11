@@ -9,7 +9,7 @@
         $dashboard_color = '';
         
 //      finance menu
-        $finance_array = array("finance/panel", "finance/reimbursement");
+        $finance_array = array("finance/panel", "finance/reimbursement", "finance/expenses","finance/suppliers");
         $finance_status = '';
         $finance_color = '';
         

@@ -58,11 +58,21 @@
                             </a>
                         </div>
                         <div class="col m3">
-                            <a style="font-size: 24px;  font-size: small; font-weight: 400; color: black;" href="#"
+                            <a style="font-size: 24px;  font-size: small; font-weight: 400; color: black;" href="<?php echo @Yii::app()->baseUrl; ?>/index.php?r=finance/expenses"
                                onmouseover="this.style.color = 'orange';"  onmouseout="this.style.color = 'black';">
                             <div class="card">
                                 <div class="card-content z-depth-3" >
-                                    <span>Settings</span><i class="material-icons right">settings</i><br>
+                                    <span>Expenses</span><i class="material-icons right">attach_money</i><br>
+                                </div>
+                            </div>
+                            </a>
+                        </div>
+                        <div class="col m3">
+                            <a style="font-size: 24px;  font-size: small; font-weight: 400; color: black;" href="<?php echo @Yii::app()->baseUrl; ?>/index.php?r=finance/suppliers"
+                               onmouseover="this.style.color = 'orange';"  onmouseout="this.style.color = 'black';">
+                            <div class="card">
+                                <div class="card-content z-depth-3" >
+                                    <span>Suppliers</span><i class="material-icons right">import_export</i><br>
                                 </div>
                             </div>
                             </a>

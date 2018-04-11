@@ -27,7 +27,7 @@ class TExpenditureItem extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('name, quantity_type', 'required'),
+			array('name', 'required'),
 			array('quantity_type', 'numerical', 'integerOnly'=>true),
 			array('name', 'length', 'max'=>128),
 			array('status', 'length', 'max'=>1),

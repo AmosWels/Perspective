@@ -2,13 +2,6 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group>
-            <file>file:/C:/xampp/htdocs/Perspective/protected/views/missions/deliverable/viewdeliverable.php</file>
-            <file>file:/C:/xampp/htdocs/Perspective/protected/views/missions/sponsorship/modals/addschedule.php</file>
-            <file>file:/C:/xampp/htdocs/Perspective/protected/views/missions/sponsorship/view.php</file>
-            <file>file:/C:/xampp/htdocs/Perspective/protected/controllers/missions/DeliverableController.php</file>
-            <file>file:/C:/xampp/htdocs/Perspective/protected/models/TDeliverable.php</file>
-            <file>file:/C:/xampp/htdocs/Perspective/protected/views/missions/deliverable/index.php</file>
-        </group>
+        <group/>
     </open-files>
 </project-private>
