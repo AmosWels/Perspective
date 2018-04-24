@@ -18,6 +18,11 @@
         $missions_status = '';
         $missions_color = '';
         
+//      plan menu
+        $plan_array = array("plan/activities");
+        $plan_status = '';
+        $plan_color = '';
+        
     if(in_array ($controller, $dashboard_array)){
         $dashboard_status = 'active';
         $dashboard_color = 'cyan-text';
@@ -27,6 +32,9 @@
     }elseif(in_array ($controller, $missions_array)){
         $missions_status = 'active';
         $missions_color = 'cyan-text';
+    }elseif(in_array ($controller, $plan_array)){
+        $plan_status = 'active';
+        $plan_color = 'cyan-text';
     } 
 ?>
 
@@ -40,7 +48,7 @@
     <?php echo CHtml::link('Missions', array('missions/sponsorship'), $htmlOptions=array('class'=>'waves-effect waves-grey '.$missions_color)); ?>
 </li>
 <li class="no-padding <?php // echo $missions_status;?>">
-    <?php echo CHtml::link('Plan', array('#'), $htmlOptions=array('class'=>'waves-effect waves-grey ')); ?>
+    <?php echo CHtml::link('Plan', array('plan/activities'), $htmlOptions=array('class'=>'waves-effect waves-grey '.$plan_color )); ?>
 </li>
 <li class="no-padding <?php // echo $missions_status;?>">
     <?php echo CHtml::link('Execute', array('#'), $htmlOptions=array('class'=>'waves-effect waves-grey ')); ?>

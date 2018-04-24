@@ -4,13 +4,25 @@
 $this->breadcrumbs=array(
 	'Suppliers',
 );
-$mapped_expense = TReimbursement::model()->findAll("status!=''");
+$mapped_supplier = TReimbursement::model()->findAll("status!=''");
 $mprofile_id = '';
-foreach($mapped_expense as $mapped){
-    $mprofile_id .= $mapped->id.', ';
+foreach($mapped_supplier as $mapped){
+    $mprofile_id .= $mapped->staff.', ';
 }
 
-$ids = rtrim($mprofile_id,', ');
+//$ids = rtrim($mprofile_id,', ');
+$ids = count($mprofile_id);
+
+    switch(rand(1,7)) { 
+        case 1:
+            $greet = 'Hello!'; break; case 2:$greet = 'Welcome!'; break;case 3:$greet = 'Greetings!'; break; case 4:$greet = 'Salutations!'; break;case 5:$greet = 'Good day!'; break; case 6:$greet = 'Yo!'; break; case 7:$greet = 'WaGwan!'; break;
+    }
+    
+$length = rand(1,3);
+$chars = array_merge(range(0,9));
+shuffle($chars);
+$password = implode(array_slice($chars, 0,$length));
+$six_digit_random_number = mt_rand(1000, 9999);
 ?>
 <div class="search-header">
     <div class="card card-transparent no-m">
@@ -24,7 +36,7 @@ $ids = rtrim($mprofile_id,', ');
                                     <div class="breadcrumbs">
                                         <span class="black-text">Finance</span> &sol;
                                          <?php echo CHtml::link('Panel', array('finance/panel')); ?> &sol;
-                                        <span>Suppliers</span>
+                                        <span>Suppliers <?php // echo $result; ?></span>
                                     </div>
                                 </h5>
                             </div>
@@ -33,7 +45,7 @@ $ids = rtrim($mprofile_id,', ');
                             <div class="col s12 m12 16">                                
                                 <ul class="tabs">
                                     <li class="tab col s12" style="text-align: left">
-                                        <span class="grey-text" style="font-size: 14px;">Supplier</span>&nbsp;&nbsp;<span class="red circle white-text">&nbsp;&nbsp;<?php echo count($model);?>&nbsp;&nbsp;</span> 
+                                        <span class="grey-text" style="font-size: 14px;">Supplier</span>&nbsp;&nbsp;<span class="red circle white-text">&nbsp;&nbsp;<?php echo count($model);?>&nbsp;&nbsp;</span><span class="right black-text"><?php print $greet;?> / <?php echo $password;?> / <?php print $six_digit_random_number; ?></span>
                                     </li>  
                                 </ul>
                             </div>
@@ -64,7 +76,8 @@ $ids = rtrim($mprofile_id,', ');
                             <thead>
                                 <tr>
                                     <th style="width: 30px;">#</th>
-                                    <th style="width: 1050px;">Supplier Name</th>
+                                    <th>Supplier Name</th>
+                                    <th>Gender</th>
                                     <th>Status</th>
                                     <th>Actions</th>
                                 </tr>
@@ -75,22 +88,29 @@ $ids = rtrim($mprofile_id,', ');
                                 $r=1;
                                 foreach ($model as $record) {
                                     switch ($record->status){ case 'A': $status = 'Active'; $btn = 'De-Activate'; $color='green-text'; break; case 'C': $status = 'Closed'; $btn = 'Activate'; $color='red-text'; break; }
-                                    $expense_id = $record->id;
-                                    $expense = TExpenditureItem::model()->findAll("$expense_id IN ($ids)");
+                                    $supplier_id = $record->staff_id;
+//                                    $supply = TReimbursement::model()->findAll("$supplier_id IN ($ids)");
+                                    $supply = 1;
+                                    
+                                    $gender_id = $record->gender;
+                                    $genderValue = TPgender::model()->findByPk($gender_id);
+                                    $genderName = $genderValue->name;
                                     ?>
-                                    <!--<tr onclick="href = '#organizationtype-status<?php //echo $record->id;?>'.class='modal-trigger'">-->
-                                    <tr class="" >
+                                    <tr>
                                         <td><?php echo $r; ?>.</td>
                                         <td><?php echo $record->names; ?></td>
+                                        <td><?php echo $genderName; ?></td>
                                         <td><a class="<?php echo $color; ?> modal-trigger" href="#expense-status<?php echo $record->id;?>"><?php echo $status; ?></a></td>
                                         <td><a href="#editsupplier<?php echo $record->id; ?>" class="modal-trigger" style="color: grey;"><i class="material-icons tiny">edit</i></a>
+                                           <?php if (count($supply)>8){ ?><a style="color: red;"><i class="material-icons tiny">delete</i></a> <?php } else{?>
                                             <a href="#delete<?php echo $record->id; ?>" class="modal-trigger" style="color: grey;"><i class="material-icons tiny">delete</i></a>
+                                            <?php } ?>
                                         </td>
                                     </tr>
                                 <?php $r++;
                                     include 'modals/supplierstatus.php';
                                     include 'modals/deletesupplier.php';
-                                    include 'modals/editsupplier.php';
+                                    include 'modals/editSupplier.php';
                                     } ?>                                        
                             </tbody>
                         </table>

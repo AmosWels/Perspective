@@ -402,6 +402,8 @@ $gender = $genderValue->name; // gender name
         <!--select form-->
         <script src="assets/plugins/select2/js/select2.min.js"></script>
         <script src="assets/js/pages/form-select2.js"></script>
+        <!--tod form-->
+        <script src="assets/js/pages/todo.js"></script>
 
 <!--<script src="assets/plugins/dropzone/dropzone.min.js"></script>-->
         <!--<script src="assets/plugins/dropzone/dropzone-amd-module.min.js"></script>-->
